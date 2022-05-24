@@ -1,0 +1,101 @@
+﻿
+    @model WebNTB.Context.User
+
+    @{
+        ViewBag.Title = "Login";
+    
+    }
+
+@if (Session["UserId"] == null)
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="~/fonts/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet" />
+        <link href="~/fonts/css/style.css" rel="stylesheet" />
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="limiter">
+
+            <div class="containerr">
+                <div class="login">
+                    <div class="login-left js-tilt">
+
+                        <img src="~/fonts/images/img-background.png" alt="" />
+                    </div>
+                    <div class="form validate-form" action="">
+
+                        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+
+                            <div class="form-input validate-input alert-validate" data-validate="Valid email is required: ex@abc.xyz">
+                                <input type="text" class="input100" name="IP" id="IP" placeholder="Username" />
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="form-input validate-input" data-validate="Password is required">
+                                <input class="input100" type="password" name="Name" id="Name" placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn">
+                                    Login
+                                </button>
+                            </div>
+
+                        }
+
+                        <div class="text-center p-t-12">
+                            <span class="txt1">
+                                Forgot
+                            </span>
+                            <a class="txt2" href="#">
+                                Password?
+                            </a>
+                        </div>
+
+                        <div class="text-center p-t-136">
+                            <a class="txt2" href="https://localhost:44312/Home/Register">
+                                Create your Account
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+}
+            else
+            {
+                <h1 >
+                    Bạn Đã Đăng nhập rồi
+                </h1>
+            }
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

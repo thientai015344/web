@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NTBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="avatar" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Website" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Addresss" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Servicee" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="Int32" Nullable="false" />
+    <Property Name="Banking_1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Banking_2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FaceBook" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Zalo" Type="Int32" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserInfo_Users" FromRole="UserInfo" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passsword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleId" Type="Boolean" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK_UserInfo_Users" FromRole="Users" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_UserInfo_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NTBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_UserInfo_Users" Association="Self.FK_UserInfo_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

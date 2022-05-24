@@ -1,0 +1,156 @@
+
+
+.container-vip {
+    background: url(../images/ddd.png);
+    height: 94vh;
+    margin: 52px 0 -83px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+.container-top{
+    height: 40%;
+    text-align: center;
+    padding: 10px;
+    color: #080850;
+}
+
+.info{
+   color: #000;
+}
+
+.info-img{
+  width: 100%;
+ 
+}
+.info-link-img{
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+.info-name {
+    margin-top: 6px ;
+    font-size: 32px;
+    color: #000;
+    font-weight: bold;
+    color: #080850;
+}
+
+.info-position {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #080850;
+}
+
+.description{
+    font-size: 20px;
+}
+
+
+/* ----------------------------- lits item  ------------------------------ */
+
+.list {
+    margin-top: 32px;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+
+}
+
+.line-top{
+    
+    padding: 6px;
+    border-bottom: 1px solid rgb(49, 44, 44);
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: #002e85;
+}
+
+.item-icon {
+    margin: 0 18px 0 10px;
+    color: #080850;
+}
+
+.description-item-top{
+    font-weight: bold;
+}
+
+@media (max-width : 890px) {
+
+    .line-top{
+    
+        width: 100% !important;
+   
+    }
+
+
+    .list-item{
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+    
+    }
+
+    .container{
+        height: 100%!important;
+    }
+
+    .footer{
+        height: 50px;
+        background-color:aqua;
+    }
+
+
+  
+
+}
+
+@media (max-width : 450px) {
+
+    .line-top{
+    
+        width: 100% !important;
+   
+    }
+
+
+    .list-item{
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+    
+    }
+
+    .container-top{
+        
+        padding: 10px !important;
+        height: 34% !important;
+       
+    }
+
+    .warp {
+      
+        margin: 0 5px !important;
+    }
+    .container{
+        height: 100%!important;
+    }
+    
+    .footer{
+        height: 50px;
+        background-color:aqua;
+    }
+
+}
+
+

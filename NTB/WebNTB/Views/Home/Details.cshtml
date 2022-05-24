@@ -1,0 +1,134 @@
+﻿@model WebNTB.Context.UserInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/fonts/css/styles.css" rel="stylesheet" />
+    <link href="~/fonts/css/main.css" rel="stylesheet" />
+    <link href="~/fonts/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet" />
+    <title>VipID</title>
+</head>
+<body>
+
+    <div class="container-vip">
+
+
+
+        <div class="container-top">
+            <div class="info">
+                <div class="info-img">
+                   
+                    <img class="info-link-img" src="~/fonts/images/Avatas/@Html.DisplayFor(model => model.avatar)" />
+                </div>
+                <div class="info-name"> @Html.DisplayFor(model => model.FullName)</div>
+                <div class="info-position"> @Html.DisplayFor(model => model.Position)</div>
+            </div>
+            <div class=" warp lh description">@Html.DisplayFor(model => model.CompanyName) </div>
+        </div>
+        <div class=" warp container-bottom">
+            <div class="list-item">
+
+                <div class="line-top">
+                    <div class="item-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="description-item">
+                        <p class="description-item-top">Số điện thoại </p>
+                        <a href="tel:@Html.DisplayFor(model => model.PhoneNumber)" class="description-item-bottom">@Html.DisplayFor(model => model.PhoneNumber)</a>
+                    </div>
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Email </p>
+                        <a href="mailto:@Html.DisplayFor(model => model.Email)?
+                        subject=MessageTitle&amp;
+                        body=Message Content" target="_blank" class="description-item-bottom">@Html.DisplayFor(model => model.Email)</a>
+                    </div>
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Website </p>
+                        <a href="http://www.@Html.DisplayFor(model => model.Website)" class="description-item-bottom">@Html.DisplayFor(model => model.Website)</a>
+                    </div>
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Địa chỉ </p>
+                        <a href="" class="description-item-bottom">@Html.DisplayFor(model => model.Addresss)</a>
+                    </div>
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-head-side-virus"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Service </p>
+                        <a class="description-item-bottom"> @Html.DisplayFor(model => model.Servicee)</a>
+                    </div>
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Mã Số Thuế</p>
+                        <a class="description-item-bottom">@Html.DisplayFor(model => model.TaxCode)</a>
+                    </div>
+                </div>
+
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Ngân hàng </p>
+                        <a class="description-item-bottom">@Html.DisplayFor(model => model.Banking_1)</a>
+                    </div>
+
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Ngân hàng </p>
+                        <a class="description-item-bottom">@Html.DisplayFor(model => model.Banking_2)</a>
+                    </div>
+
+                </div>
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Facebook </p>
+                        <a class="description-item-bottom">@Html.DisplayFor(model => model.FaceBook)</a>
+                    </div>
+                </div>
+
+                <div class="line-top">
+                    <div class="item-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="description-item">
+                        <p class="description-item-top">Zalo</p>
+                        <a class="description-item-bottom">@Html.DisplayFor(model => model.Zalo)</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer"></div>
+
+
+    </div>
+
+</body>
+</html>
+
+
+
